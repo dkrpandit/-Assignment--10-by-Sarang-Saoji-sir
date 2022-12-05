@@ -12,10 +12,6 @@ public class student implements Serializable {
 
 
     //    generate getter and setter method
-    public String getName() {
-        return name;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -28,32 +24,16 @@ public class student implements Serializable {
         this.student_ID = student_ID;
     }
 
-    public int getRoll_no() {
-        return roll_no;
-    }
-
     public void setRoll_no(int roll_no) {
         this.roll_no = roll_no;
-    }
-
-    public String getStd() {
-        return std;
     }
 
     public void setStd(String std) {
         this.std = std;
     }
 
-    public int getMark() {
-        return mark;
-    }
-
     public void setMark(int mark) {
         this.mark = mark;
-    }
-
-    public String getAddress() {
-        return address;
     }
 
     public void setAddress(String address) {
