@@ -101,16 +101,19 @@ public class database {
             for (int i = 0; i < studentArrayList.size(); i++) {
                 if (studentArrayList.get(i).getStudent_ID().equals(ID)) {
                     System.out.println(studentArrayList.get(i).toString());
-                    student temp = studentArrayList.get(i);
-                    Update_Record(temp);
-                    System.out.println("Updated successfully");
+                    Update_Record(studentArrayList.get(i));
                     flag = 0;
                 } else {
                     flag = 1;
                 }
             }
-            if (flag == 1) {
-                System.out.println("Recoded not found");
+            if (flag==0) {
+                WriteInFile();
+                System.out.println("Record Updated Successfully!");
+                System.out.println("-------------------------------------------------------------------------------------------");
+            } else {
+                System.out.println("Record not Found!");
+                System.out.println("-------------------------------------------------------------------------------------------");
             }
         } else {
             System.out.println("File not found");
@@ -140,7 +143,45 @@ public class database {
                     System.out.println("-------------------------------------------------------------------------------------------");
                     break;
                 case 2:
+                    System.out.print("Enter new Student I'D: ");
+                    String id = input.next();
+                    obj.setStudent_ID(id);
+                    studentArrayList.set(studentArrayList.indexOf(obj), obj);
+                    System.out.println("Record Updated Successfully!");
+                    System.out.println("-------------------------------------------------------------------------------------------");
                      break;
+                case 3:
+                    System.out.print("Enter new Roll number: ");
+                    int roll_no = input.nextInt();
+                    obj.setRoll_no(roll_no);
+                    studentArrayList.set(studentArrayList.indexOf(obj), obj);
+                    System.out.println("Record Updated Successfully!");
+                    System.out.println("-------------------------------------------------------------------------------------------");
+                    break;
+                case 4:
+                    System.out.print("Enter new class: ");
+                    String std= input.next();
+                    obj.setStd(std);
+                    studentArrayList.set(studentArrayList.indexOf(obj), obj);
+                    System.out.println("Record Updated Successfully!");
+                    System.out.println("-------------------------------------------------------------------------------------------");
+                    break;
+                case 5:
+                    System.out.print("Enter new Address: ");
+                    String address = input.next();
+                    obj.setAddress(address);
+                    studentArrayList.set(studentArrayList.indexOf(obj), obj);
+                    System.out.println("Record Updated Successfully!");
+                    System.out.println("-------------------------------------------------------------------------------------------");
+                    break;
+                case 6:
+                    System.out.print("Enter new Mark: ");
+                    int mark = input.nextInt();
+                    obj.setMark(mark);
+                    studentArrayList.set(studentArrayList.indexOf(obj), obj);
+                    System.out.println("Record Updated Successfully!");
+                    System.out.println("-------------------------------------------------------------------------------------------");
+                    break;
             }
         } while (choice != 0);
 
